@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
-    //protected $fillable = ['title', 'slug', 'image', 'content', 'date'];
+    protected $fillable = ['name', 'slug'];
 
 
     public function posts(): HasMany 

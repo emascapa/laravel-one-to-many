@@ -3,7 +3,12 @@
 @section('content')
     <div class="container py-4">
 
-        <h2>Posts List</h2>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="display-4 m-0">Posts List</h2>
+
+            <a class="btn btn-primary btn-lg text-white" href="{{ route('admin.posts.create') }}">Create New Post</a>    
+        </div>
 
         <table class="table table-striped table-responsive">
             <thead>
