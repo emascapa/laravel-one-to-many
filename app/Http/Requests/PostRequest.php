@@ -26,6 +26,7 @@ class PostRequest extends FormRequest
         return [
             //
             'title' => 'required|unique:posts|max:255',
+            'category_id' => 'nullable',
             'content' => 'nullable',
             'image' => 'nullable',
             'date' => 'required'

@@ -3,6 +3,9 @@
 @section('content')
     <div class="container py-4">
 
+{{--         @php
+            dd($categories)
+        @endphp --}}
 
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="display-4 m-0">Posts List</h2>
@@ -15,6 +18,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Slug</th>
                     <th>Content</th>
                     <th>Image</th>
@@ -28,6 +32,7 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->title }}</td>
+                        <td>{{ ($post->category_id) ? $categories[$post->category_id - 1]->name : 'null' }}</td>
                         <td>{{ $post->slug }}</td>
                         <td>{{ $post->content }}</td>
                         <td><img width="50px" src="{{ $post->image }}" alt="{{ $post->slug }}"></td>

@@ -2,6 +2,21 @@
 
 @section('content')
 
+
+    @php
+        
+        for($i=0; $i < count($categories); $i++) {
+
+            var_dump("i = $i");
+            var_dump($categories[$i]->name);
+            var_dump($categories[$i]->id);
+            var_dump("-------------------");
+
+        }
+
+    @endphp
+
+
     <div class="container">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -29,6 +44,24 @@
                 @error('title')
                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                 @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="category_id">Category</label>
+                {{-- <textarea rows="3" type="text" name="category" id="category"
+                    class="form-control @error('category') is-invalid @enderror" value="{{ old('category') }}">
+                </textarea> --}}
+                  <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
+                    <option selected disabled>Choose a category</option>
+
+                    @foreach ($categories as $category)
+                        
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+
+                    @endforeach
+                    
+                  </select>
+               
             </div>
 
             <div class="mb-3">

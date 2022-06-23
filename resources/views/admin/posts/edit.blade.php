@@ -34,6 +34,24 @@
             </div>
 
             <div class="mb-3">
+                <label for="category_id">Category</label>
+                {{-- <textarea rows="3" type="text" name="category" id="category"
+                    class="form-control @error('category') is-invalid @enderror" value="{{ old('category') }}">
+                </textarea> --}}
+                  <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
+                    <option disabled>Choose a category</option>
+
+                    @foreach ($categories as $category)
+                        
+                    <option value="{{$category->id}}" {{($category->id == $post->category_id ) ? 'selected' : ''}}>{{$category->name}}</option>
+
+                    @endforeach
+                    
+                  </select>
+               
+            </div>
+
+            <div class="mb-3">
                 <label for="content">Content</label>
                 <textarea rows="3" type="text" name="content" id="content"
                     class="form-control @error('content') is-invalid @enderror" value="{{ $post->content }}">
