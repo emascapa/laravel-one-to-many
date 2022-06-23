@@ -33,6 +33,9 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')
 
         Route::resource('posts', 'PostController');
 
+
+        Route::resource('categories', 'CategoryController');
+
     });
 
 

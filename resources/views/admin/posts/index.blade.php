@@ -3,9 +3,7 @@
 @section('content')
     <div class="container py-4">
 
-        {{-- @php
-    dd($posts)
-@endphp --}}
+        <h2>Posts List</h2>
 
         <table class="table table-striped table-responsive">
             <thead>
