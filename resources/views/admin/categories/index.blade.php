@@ -35,7 +35,15 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->slug }}</td>
                         <td>
-                            Delete
+                            <form action="{{route('admin.categories.destroy', $category->id)}}" method="post">
+                            
+                            @csrf
+
+                            @method('DELETE')
+
+                            <button class="btn btn-danger btn-sm text-white" type="submit">Delete</button>
+                            
+                            </form>
                         </td>
                     </tr>
 
